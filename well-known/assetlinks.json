@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.camlivebilliard.stream",
+      "sha256_cert_fingerprints": [
+        "52:D4:68:7F:2F:96:5A:F3:91:91:B6:DE:F3:22:C2:CC:AD:A2:75:65:83:86:37:68:E6:AE:6D:5E:6A:FB:06:88"
+      ]
+    }
+  }
+]
