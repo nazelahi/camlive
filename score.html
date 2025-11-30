@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Score Display - CamLiveBilliard</title>
+    <link rel="stylesheet" href="css/score.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Score Overlay Container -->
+    <div id="scoreOverlay" class="score-overlay">
+        <div class="score-container">
+            <!-- Player 1 -->
+            <div class="player-section player-1">
+                <div class="player-name" id="player1Name">Player 1</div>
+                <div class="player-stats">
+                    <div class="current-points" id="player1Points">0</div>
+                    <div class="frames-won">
+                        <span class="frames-label">Frames</span>
+                        <span class="frames-value" id="player1Frames">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VS Divider -->
+            <div class="vs-divider">
+                <span class="vs-text">VS</span>
+            </div>
+
+            <!-- Player 2 -->
+            <div class="player-section player-2">
+                <div class="player-name" id="player2Name">Player 2</div>
+                <div class="player-stats">
+                    <div class="current-points" id="player2Points">0</div>
+                    <div class="frames-won">
+                        <span class="frames-label">Frames</span>
+                        <span class="frames-value" id="player2Frames">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Break Display -->
+        <div class="break-display" id="breakDisplay" style="display: none;">
+            <span class="break-label">Break:</span>
+            <span class="break-value" id="breakValue">0</span>
+        </div>
+    </div>
+
+    <!-- Control Panel (Hidden in OBS, visible for testing) -->
+    <div id="controlPanel" class="control-panel">
+        <div class="control-header">
+            <h2>🎱 Score Control Panel</h2>
+            <button id="toggleControls" class="toggle-btn">Hide Controls</button>
+        </div>
+        
+        <div class="control-content">
+            <div class="control-section">
+                <h3>Connection</h3>
+                <div class="connection-status">
+                    <span class="status-indicator" id="statusIndicator"></span>
+                    <span id="connectionStatus">Waiting for connection...</span>
+                </div>
+                <div class="connection-info">
+                    <p><strong>Connection ID:</strong> <code id="connectionId">-</code></p>
+                    <button id="copyIdBtn" class="btn-small">Copy ID</button>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Manual Score Update</h3>
+                <div class="manual-controls">
+                    <div class="player-controls">
+                        <h4>Player 1</h4>
+                        <input type="text" id="manualPlayer1Name" placeholder="Player 1 Name">
+                        <input type="number" id="manualPlayer1Points" placeholder="Points" min="0">
+                        <input type="number" id="manualPlayer1Frames" placeholder="Frames" min="0">
+                    </div>
+                    <div class="player-controls">
+                        <h4>Player 2</h4>
+                        <input type="text" id="manualPlayer2Name" placeholder="Player 2 Name">
+                        <input type="number" id="manualPlayer2Points" placeholder="Points" min="0">
+                        <input type="number" id="manualPlayer2Frames" placeholder="Frames" min="0">
+                    </div>
+                </div>
+                <button id="updateScoresBtn" class="btn-primary">Update Scores</button>
+            </div>
+
+            <div class="control-section">
+                <h3>Layout Options</h3>
+                <select id="layoutSelect" class="layout-select">
+                    <option value="default">Default (Bottom Center)</option>
+                    <option value="top">Top Center</option>
+                    <option value="compact">Compact</option>
+                    <option value="minimal">Minimal</option>
+                </select>
+            </div>
+
+            <div class="control-section">
+                <h3>Instructions</h3>
+                <ol class="instructions">
+                    <li>Copy the Connection ID above</li>
+                    <li>Enter it in your CamLiveBilliard app</li>
+                    <li>Scores will update automatically</li>
+                    <li>Or use manual controls for testing</li>
+                    <li>Add this page as Browser Source in OBS</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/score.js"></script>
+</body>
+</html>
