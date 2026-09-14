@@ -42,6 +42,45 @@
     --border-color: #D5CEBC;
 }
 
+/* CamLive Dark Solarized Theme (matches the app's appColorDark theme) */
+:root[data-theme="dark"] {
+    --primary-dark: #EEE8D5;         /* headings become light text */
+    --bg-base: #073642;              /* solarized base02 */
+    --bg-surface: #0B474F;           /* dark card surface */
+    --bg-input: #10505A;
+    --bg-panel: #0A3A45;
+    --bg-secondary: #0B474F;
+    --border: #2E5B6E;
+    --border-color: #2E5B6E;
+    --text-primary: #EEE8D5;         /* solarized base2 */
+    --text-secondary: #93A1A1;       /* solarized base1 */
+    --text-faint: #839496;           /* solarized base0 */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 6px 16px -4px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 14px 30px -8px rgba(0, 0, 0, 0.6);
+    --shadow-teal: 0 10px 26px -6px rgba(42, 161, 152, 0.55);
+}
+
+:root[data-theme="dark"] body {
+    background-image: linear-gradient(180deg, #073642 0%, #062E37 50%, #042127 100%);
+}
+
+:root[data-theme="dark"] .navbar {
+    background: rgba(7, 54, 66, 0.92);
+}
+
+:root[data-theme="dark"] .hero {
+    background: linear-gradient(160deg, #073642 0%, #062E37 55%, #042127 100%);
+}
+
+:root[data-theme="dark"] .hero::before {
+    background: radial-gradient(circle, rgba(42, 161, 152, 0.20) 0%, transparent 65%);
+}
+
+:root[data-theme="dark"] .hero::after {
+    background: radial-gradient(circle, rgba(179, 137, 0, 0.15) 0%, transparent 65%);
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text-primary);
@@ -143,6 +182,45 @@ body {
     width: 100%;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-teal);
+    transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.theme-toggle .theme-icon-moon {
+    display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .theme-icon-sun {
+    display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .theme-icon-moon {
+    display: block;
+}
+
+/* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
