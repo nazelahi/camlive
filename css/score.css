@@ -7,13 +7,14 @@
 }
 
 :root {
-    --primary-color: #4F46E5;
-    --secondary-color: #10B981;
+    --primary-color: #2AA198;
+    --secondary-color: #859900;
     --text-primary: #FFFFFF;
-    --text-secondary: #14F195;
-    --bg-overlay: rgba(0, 0, 0, 0.85);
-    --bg-panel: #1F2937;
-    --border-color: #374151;
+    --text-secondary: #35B5AB;
+    --bg-overlay: rgba(7, 54, 66, 0.88);
+    --bg-panel: #073642;
+    --border-color: #2E5B6E;
+    --accent-gold: #B58900;
 }
 
 body {
@@ -72,6 +73,24 @@ body {
     letter-spacing: 1px;
 }
 
+.player-1 .player-name {
+    color: var(--primary-color);
+}
+
+.player-2 .player-name {
+    color: var(--accent-gold);
+}
+
+.player-1 .current-points,
+.player-1 .frames-value {
+    color: #2AA198;
+}
+
+.player-2 .current-points,
+.player-2 .frames-value {
+    color: #B58900;
+}
+
 .player-stats {
     display: flex;
     align-items: center;
@@ -124,7 +143,7 @@ body {
     margin-top: 1rem;
     text-align: center;
     padding: 0.5rem 1rem;
-    background: rgba(16, 185, 129, 0.2);
+    background: rgba(133, 153, 0, 0.22);
     border-radius: 8px;
     border: 1px solid var(--secondary-color);
 }
@@ -268,12 +287,12 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #EF4444;
+    background: #DC322F;
     animation: pulse 2s infinite;
 }
 
 .status-indicator.connected {
-    background: #10B981;
+    background: #859900;
 }
 
 @keyframes pulse {
@@ -318,7 +337,7 @@ body {
 }
 
 .btn-small:hover {
-    background: #4338CA;
+    background: #1E8278;
 }
 
 .manual-controls {
@@ -363,7 +382,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #4338CA;
+    background: #1E8278;
 }
 
 .layout-select {
@@ -459,5 +478,5 @@ body.obs-mode .control-panel {
 }
 
 .control-content::-webkit-scrollbar-thumb:hover {
-    background: #4338CA;
+    background: #1E8278;
 }
