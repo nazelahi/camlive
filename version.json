@@ -2,8 +2,8 @@
   "versionCode": 8,
   "versionName": "1.0.6",
   "minSupportedVersionCode": 1,
-  "apkUrl": "https://github.com/nazelahi/CAMLIVEB/releases/latest/download/app-release.apk",
-  "sha256": "",
+  "apkUrl": "https://camlive.online/app-release-1.0.6.apk",
+  "sha256": "836c41b8bd167d53c9183035727f97e97e8b541b76a452e61acf32f7ef36ecb8",
   "forceUpdate": false,
   "changelog": [
     "In-app update support — download and install new versions without leaving CamLive",
